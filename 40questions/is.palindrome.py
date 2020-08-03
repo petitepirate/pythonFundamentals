@@ -1,3 +1,7 @@
+def remove(phrase): 
+    phrase = phrase.replace(" ", "")
+    return phrase
+
 def is_palindrome(phrase):
     """Is phrase a palindrome?
 
@@ -21,3 +25,16 @@ def is_palindrome(phrase):
         >>> is_palindrome('Noon')
         True
     """
+    new_phrase = remove(phrase).lower(),
+    if new_phrase == new_phrase[::-1]:
+        return True
+
+print(is_palindrome('taco cat'))
+
+print(is_palindrome('Noon'))
+
+# ----------------------------------------------
+# school solution:
+
+#     normalized = phrase.lower().replace(' ', '')
+#     return normalized == normalized[::-1]
