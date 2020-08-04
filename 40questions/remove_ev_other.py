@@ -11,3 +11,24 @@ def remove_every_other(lst):
         >>> lst
         [1, 2, 3, 4, 5]
     """
+    # new_list = []
+    # for item in lst:
+    #     if item[] % 2 == 0:
+    #         new_list.append(item)
+    # return new_list
+    newList = [x for i, x in enumerate(lst) if i % 2 == 0]
+    return newList
+
+
+lst = [1, 2, 3, 4, 5]
+
+print(remove_every_other(lst))
+
+# ------------------------------------------------
+# school solution
+
+return lst[::2]
+
+# Okay way
+#
+# return [val for i, val in enumerate(lst) if i % 2 == 0]

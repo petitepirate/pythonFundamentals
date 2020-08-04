@@ -1,3 +1,11 @@
+def is_even(num):
+    return num % 2 == 0
+
+
+def is_string(el):
+    return isinstance(el, str)
+
+
 def partition(lst, fn):
     """Partition lst by predicate.
 
@@ -19,3 +27,28 @@ def partition(lst, fn):
         >>> partition(["hi", None, 6, "bye"], is_string)
         [['hi', 'bye'], [None, 6]]
     """
+
+    # Best solution:
+
+    true_list = []
+    false_list = []
+
+    for val in lst:
+        if fn(val):
+            true_list.append(val)
+        else:
+            false_list.append(val)
+
+    return [true_list, false_list]
+
+    # Clever, but less optimal solution --- this runs fn() twice on each element,
+    # not once:
+    #
+    # return [
+    #     [val for val in lst if fn(val)],
+    #     [val for val in lst if not fn(val)]
+    # ]
+
+
+print(partition([1, 2, 3, 4], is_even))
+print(partition(["hi", None, 6, "bye"], is_string))

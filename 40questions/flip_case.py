@@ -11,22 +11,39 @@ def flip_case(phrase, to_swap):
         'AaaaHHH'
 
     """
-    out = ""
+
+
+# My solution:
+    new_phrase = ""
 
     for ltr in phrase:
         if ltr.lower() == to_swap:
-            ltr = ltr.swapcase()
-            out += ltr
-        else:
-            return ltr
+            ltr = ltr.upper()
+            new_phrase += ltr
         if ltr.upper() == to_swap:
-            ltr = ltr.swapcase()
-            out += ltr
-        else: 
-            return ltr
+            ltr = ltr.lower()
+            new_phrase += ltr
+        new_phrase += ltr
+    return new_phrase
 
-    return out
 
-print(flip_case('Aaaahh', 'a'))
-print(flip_case('Aaaahh', 'A'))
-print(flip_case('Aaaahh', 'h'))
+print(flip_case('Aaaahh', 'a'))  # prints AAAAAhh
+print(flip_case('Aaaahh', 'A'))  # prints aaaaahh
+print(flip_case('Aaaahh', 'h'))  # prints AaaaHH
+# _______________________________________________________
+# School Solution
+
+#  to_swap = to_swap.lower()
+#   out = ""
+
+#    for ltr in phrase:
+#         if ltr.lower() == to_swap:
+#             ltr = ltr.swapcase()
+#         out += ltr
+
+#     return out
+
+
+# print(flip_case('Aaaahh', 'a'))   # prints aAAAhh
+# print(flip_case('Aaaahh', 'A'))   # prints aAAAhh
+# print(flip_case('Aaaahh', 'h'))   # prints AaaaHH
