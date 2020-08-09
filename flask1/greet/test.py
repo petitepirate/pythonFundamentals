@@ -1,7 +1,6 @@
 from app import app
 import unittest
 
-
 class TestSimpleRoutes(unittest.TestCase):
 
     def test_welcome(self):
