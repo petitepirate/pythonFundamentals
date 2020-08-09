@@ -18,7 +18,6 @@ distro-info===0.23ubuntu1
 entrypoints==0.3
 Flask==1.1.2
 Flask-DebugToolbar==0.11.0
-httplib2==0.14.0
 hyperlink==19.0.0
 idna==2.8
 importlib-metadata==1.5.0
@@ -68,7 +67,6 @@ six==1.14.0
 ssh-import-id==5.10
 systemd-python==234
 traitlets==4.3.3
-Twisted==18.9.0
 ubuntu-advantage-tools==20.3
 ufw==0.36
 unattended-upgrades==0.1
