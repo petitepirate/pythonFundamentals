@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template
-from random import randint, choice
+from random import randint, choice, sample
 from flask_debugtoolbar import DebugToolbarExtension
 
 app = Flask(__name__)
@@ -27,6 +27,11 @@ def show_form():
     return render_template("form.html")
 
 
+@app.route('/form2')
+def show_form2():
+    return render_template("form2.html")
+
+
 COMPLIMENTS = ["cool", "clever", "tenacious", "awesome", "Pythonic"]
 
 
@@ -35,6 +40,14 @@ def greet():
     username = request.args["username"]
     nice_thing = choice(COMPLIMENTS)
     return render_template("greet.html", username=username, compliment=nice_thing)
+
+
+@app.route('/greet2')
+def greet2():
+    username = request.args["username"]
+    wants = request.args.get("wants_compliments")
+    nice_things = sample(COMPLIMENTS, 3)
+    return render_template("greet2.html", username=username, wants_compliments=wants, compliments=nice_things)
 
 
 @app.route('/hello')
@@ -46,7 +59,7 @@ def say_hello():
 
 @app.route('/lucky')
 def lucky_number():
-    num = randint(1, 20)
+    num = randint(1, 5)
     return render_template('lucky.html', lucky_num=num, msg="You are so lucky")
 
 
@@ -57,6 +70,11 @@ def search():
     return f"<h1>Search Results form: {term}</h1> <p>Sorting by: {sort}</p>"
 
 
+@app.route('/spell/<word>')
+def spell(word):
+    caps_word = word.upper()
+    return render_template("spell.html", word=caps_word)
+
 # @app.route('/post', methods=['POST'])
 # def post():
 #     return "YOPU MADE A POST REQUREST"
@@ -66,6 +84,8 @@ def search():
 #     return "YOPU MADE A GET REQUREST"
 
 # get request for form
+
+
 @app.route('/add-comment')
 def add_comment_form():
     return """

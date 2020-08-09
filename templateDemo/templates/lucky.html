@@ -8,5 +8,12 @@
 <body>
     <h1>Your lucky number is: {{lucky_num}}</h1>
     <p>{{msg}}</p>
+
+    {% if lucky_num == 3 %}
+        <h2>Thats my favorite!</h2>
+    {% else %}
+        <h2>I dont like that number</h2>
+    {% endif %}
+
 </body>
 </html>
