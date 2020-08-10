@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <title>Megan's Madlibs</title>
+
+    <form action="/story">
+        <h1>It's Story Time!</h1>
+        <label for="place">Enter a place:</label>
+        <input type="text" placeholder="place - ex. apartment" name="place">
+
+        <label for="noun">Enter a noun:</label>
+        <input type="text" placeholder="noun - ex. dragon" name="noun">
+
+        <label for="verb">Enter a verb:</label>
+        <input type="text" placeholder="verb - ex. eat" name="verb">
+
+        <label for="adjective">Enter an adjective:</label>
+        <input type="text" placeholder="adjective - ex. frozen" name="adjective">
+
+        <label for="plural_noun">Enter a plural noun:</label>
+        <input type="text" placeholder="plural noun - ex. popsicles" name="plural_noun">
+
+        <button>Submit!</button>
+{% endblock %}
